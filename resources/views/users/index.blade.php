@@ -35,6 +35,7 @@
 @endsection
 
 @section('javascript')
+const deleteUrl = "{{ url("users") }}/";
 @endsection
 @section('js-files')
     @vite('resources/js/delete.js');

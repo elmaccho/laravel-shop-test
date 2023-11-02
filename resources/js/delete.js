@@ -14,7 +14,7 @@ $(function() {
             if (result.isConfirmed) {
                 $.ajax({
                     method: "DELETE",
-                    url: $(this).data("id") 
+                    url: deleteUrl + $(this).data("id") 
                 })
                 .done(function(data) {
                     window.location.reload();

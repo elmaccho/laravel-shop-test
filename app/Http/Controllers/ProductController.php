@@ -2,18 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
-use App\Models\User;
 
-class UserController extends Controller
+class ProductController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view("users.index", [
-            'users' => User::paginate(5)
+        return view("products.index",[
+            'products' => Product::paginate(10)
         ]);
     }
 
@@ -22,7 +22,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        return view("products.create");
     }
 
     /**
@@ -30,40 +30,48 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $product = new Product($request->all());
+        $product->save();
+        return redirect(route('products.index'));
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Product $product)
     {
-        //
+        return view("products.show",[
+            'product' => $product
+        ]);
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Product $product)
     {
-        //
+        return view("products.edit",[
+            'product' => $product
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Product $product)
     {
-        //
+        $product->fill($request->all());
+        $product->save();
+        return redirect(route('products.index'));
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(User $user)
+    public function destroy(Product $product)
     {
         try{
-            $user->delete();
+            $product->delete();
             return response()->json([
                 'status' => 'success'
             ]);
