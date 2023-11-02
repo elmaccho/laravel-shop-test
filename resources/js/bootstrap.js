@@ -10,6 +10,7 @@ import axios from 'axios';
 window.axios = axios;
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+// window.Swal = require('sweetalert2')
 
 // try{
 //     window.Popper = require('popper.js').default;

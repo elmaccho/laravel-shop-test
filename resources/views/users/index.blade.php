@@ -35,21 +35,7 @@
 @endsection
 
 @section('javascript')
-    $(function() {
-        $('.delete').click(function(){
-
-            $.ajax({
-                method: "DELETE",
-                url: $(this).data("id")
-                {{-- data: { id: $(this).data("id") } --}}
-            })
-            .done(function(response) {
-                window.location.reload();
-            })
-            .fail(function(response){
-                alert("ERROR")
-            })
-
-        })
-      });
+@endsection
+@section('js-files')
+    @vite('resources/js/delete.js');
 @endsection
