@@ -77,7 +77,15 @@
 
                         <div class="row mb-3 justify-content-center">
                             <div class="col-md-6">
-                                <img src="{{ asset('storage/' . $product->image_path) }}" alt="Zdjęcie produktu">
+                                @if (!is_null($product->image_path))
+                                    <img src="{{ asset('storage/' . $product->image_path) }}" class="form-control @error('image') is-invalid @enderror" alt="Zdjęcie produktu">
+                                @endif
+
+                                @error('image')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
                             </div>
                         </div>
 
