@@ -2,14 +2,14 @@ $(function() {
     $('.delete').click(function(){
 
         Swal.fire({
-            title: 'Jesteś pewien?',
-            text: "Nie będziesz mógł cofnąć tej decyzji!",
+            title: confirmDelete,
+            text: moreInfoDelete,
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            confirmButtonText: 'Tak, usuń!',
-            cancelButtonText: 'Anuluj'
+            confirmButtonText: deleteAgree,
+            cancelButtonText: deleteCancel
           }).then((result) => {
             if (result.isConfirmed) {
                 $.ajax({
