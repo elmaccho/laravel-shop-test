@@ -30,7 +30,8 @@
                 'amount' => 'Ilość',
                 'price' => 'Cena',
                 'image' => 'Grafika',
-                'action' => 'Akcje'
+                'action' => 'Akcje',
+                'category' => 'Kategoria'
             ]
         ]
     ]
