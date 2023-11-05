@@ -1,10 +1,15 @@
 <?php
     return [
 
+        'welcome' => [
+            'products' => 'Produkty',
+            'categories' => 'Kategorie',
+            'price' => 'Cena',
+            'filter' => 'Filtruj',
+        ],
         'columns' => [
             'actions' => 'Akcje'
         ],
-
         'messages' => [
 
             'delete_title' => "Czy na pewno chcesz usunąć rekord?",
@@ -12,12 +17,10 @@
             'delete_agree' => 'Tak',
             'delete_cancel' => 'Anuluj'
         ],
-
         'button' => [
             'save' => 'Zapisz',
             'add' => 'Dodaj'
         ],
-
         'product' => [
             'add_title' => 'Dodawanie produktu',
             'edit_title' => 'Edycja produktu',
